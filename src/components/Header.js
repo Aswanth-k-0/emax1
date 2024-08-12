@@ -1,23 +1,46 @@
-import React from 'react'
-import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from 'react';
+import { Navbar, Button, Collapse } from 'react-bootstrap';
+import { FaBars } from 'react-icons/fa';  // Icon for the collapsible menu
+import { AiOutlineUser } from 'react-icons/ai';
+
 
 function Header() {
+    const [open, setOpen] = useState(false);
   return (
-    <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>s rc/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+            {/* Header Navbar */}
+            <Navbar bg="light" expand="lg">
+                <div className="d-flex " style={{ paddingLeft: '20px', paddingRight: '20px' }}>
+                    {/* Left: Collapsible Sidebar Button */}
+                    <Button
+                        onClick={() => setOpen(!open)}
+                        aria-controls="collapse-sidebar"
+                        aria-expanded={open}
+                        variant="outline-primary"
+                        className="me-3"
+                    >
+                        <FaBars /> {/* Collapsible menu icon */}
+                    </Button>
+
+                    {/* Right: Admin Logo */}
+                    <div className='ms-auto' style={{paddingLeft:'100%'}}>
+                        <AiOutlineUser size={40} /> {/* Admin logo */}
+                    </div>
+                </div>
+            </Navbar>
+
+            {/* Collapsible Sidebar */}
+            <Collapse in={open}>
+                <div
+                    id="collapse-sidebar"
+                    className="position-absolute bg-light p-3"
+                    style={{ top: '56px', left: 0, width: '250px', height: '100vh' }}
+                >
+                    {/* Optional: Sidebar content */}
+                </div>
+            </Collapse>
+        </div>
   )
 }
 
