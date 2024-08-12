@@ -1,20 +1,5 @@
-.navbar {
-  width: 60px;
-  transition: width 0.3s;
-}
-
-.navbar.expanded {
-  width: 250px;
-}
-
-.flex-grow-1 {
-  padding-right: 20px;
-}
-
-button:focus {
-  box-shadow: none;
-}
-
-.container {
-  max-width: '100%';
+.App {
+  text-align: center;
+  background-color: #000;
+  color: white;
 }
