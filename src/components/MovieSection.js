@@ -1,18 +1,18 @@
 import React from "react";
 import "./css/MovieSection.css";
+import Nowshow from "./Nowshow.js";
+import Upcoming from "./Upcoming.js";
 
 const MovieSection = () => {
   return (
     <div className="movie-section">
       <h2>Now showing</h2>
       <div className="movie">
-        <img alt="Oppenheimer" />
-        <button>Book now</button>
+        <Nowshow/>
       </div>
       <h2>Upcoming releases</h2>
       <div className="movie">
-        <img  alt="Brave" />
-        <button>Pre-Book</button>
+        <Upcoming/>
       </div>
     </div>
   );
