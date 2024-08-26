@@ -11,7 +11,7 @@ function App() {
       <MovieSection />
       <Footer />
     </div>
-  );
+  ); 
 }
 
 export default App;
