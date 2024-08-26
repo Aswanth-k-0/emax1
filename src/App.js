@@ -1,16 +1,17 @@
 import React from "react";
-import Header from "./components/Header";
-import MovieSection from "./components/MovieSection";
-import Footer from "./components/Footer";
-import "./App.css";
-
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import Main from "./Pages/Main.js";
+import Admin from "./Pages/Admin.js";
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <MovieSection />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/"Component={Main}/>
+          <Route path="/Admin" component={Admin}/>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
